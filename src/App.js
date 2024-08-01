@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+import MyForm from './Components/FirstStep';
+import AnalyticsForm from './Components/ForthStep';
+import Navbar from './Components/Navbar';
+import MultiStepForm from './Components/SecondStep2';
+import AdvancedValidationForm from './Components/ThirdStep';
+import { BrowserRouter as Router , Route , Routes } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <Navbar/> 
+      <Routes>
+        <Route path='/' element={<MyForm/>} />
+        <Route path='/multistep' element={<MultiStepForm/>} />
+        <Route path='/advance' element={<AdvancedValidationForm/>} />
+        <Route path='/analitics' element={<AnalyticsForm/>} />
+      </Routes>
+    </Router>
+   
+    </>
   );
 }
 
 export default App;
+  
